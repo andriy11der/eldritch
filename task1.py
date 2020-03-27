@@ -9,13 +9,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 
 
-def bra():
+def brawser():
     try:
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options = Options()
-        # chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--window-size=1230,1024")
-        # chrome_options.add_argument("--blink-settings=imagesEnabled=false")
+        chrome_options.add_argument("start-maximized")
         chrome = webdriver.Chrome(options=chrome_options)
         return chrome
     except Exception as e:
@@ -29,11 +26,11 @@ def exit(chrome):
         chrome.implicitly_wait(10)
         print('good open site')
         input_element = chrome.find_element_by_name("password")
-        input_element.send_keys('ef2019') # paswd
+        input_element.send_keys('ef2019')
         chrome.implicitly_wait(10)
         input_element.send_keys(Keys.ENTER)
         print('good pass')
-        chrome.execute_script("document.querySelector('.mui-btn').click()")  # click Go IT
+        chrome.execute_script("document.querySelector('.mui-btn').click()")
         chrome.implicitly_wait(10)
         print('good click')
         sleep(25)
@@ -67,7 +64,7 @@ def choise_all(chrome):
 
 
 def main():
-    chrome = bra()
+    chrome = brawser()
     exit(chrome)
     choise_all(chrome)
     # choice_races(chrome)
