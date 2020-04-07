@@ -40,6 +40,7 @@ def exit(chrome):
     except Exception as e:
         print(e)
 
+
 def choice_races(chrome):
     try:
         for i in range(5):
