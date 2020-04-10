@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+
 log_file = 'log.log'
 f = open(log_file, "w")
 f.write(f"start, {datetime.datetime.now()}\n")
