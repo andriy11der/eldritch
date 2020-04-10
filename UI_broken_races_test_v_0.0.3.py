@@ -13,16 +13,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-log_file = 'log.log'
-f = open(log_file, "w")
+logs_file = 'logs.log'
+f = open(logs_file, "w")
 f.write(f"start, {datetime.datetime.now()}\n")
 
-def bra():
+def browser():
     try:
         chrome_options = webdriver.ChromeOptions()
         # chrome_options = Options()
         # chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--window-size=1230,1024")
+        chrome_options.add_argument("--window-size=1030,824")
         # chrome_options.add_argument("--blink-settings=imagesEnabled=false")
         chrome = webdriver.Chrome(options=chrome_options)
         return chrome
@@ -30,20 +30,20 @@ def bra():
         print(e)
 
 
-def exit(chrome):
+def open_site(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         f.write(f"start login, {datetime.datetime.now()}\n")
         chrome.switch_to.window(chrome.window_handles[0])
         chrome.get('https://stage.eldritch-foundry.com/')
         chrome.implicitly_wait(10)
         f.write(f"successful open site, {datetime.datetime.now()}\n")
         input_element = chrome.find_element_by_name("password")
-        input_element.send_keys('ef2019') # paswd
+        input_element.send_keys('ef2019')
         chrome.implicitly_wait(10)
         input_element.send_keys(Keys.ENTER)
         print('good pass')
-        chrome.execute_script("document.querySelector('.mui-btn').click()") # click Go IT
+        chrome.execute_script("document.querySelector('.mui-btn').click()")
         chrome.implicitly_wait(10)
         print('good click')
         sleep(25)
@@ -58,13 +58,13 @@ def sed_click(chrome):
 
 def choice_races(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         races = chrome.find_elements_by_css_selector(".scroll .option")
         f.write(f"Count of races {len(races)}, {datetime.datetime.now()}\n")
         max_race_number = 30
         chrome.switch_to.window(chrome.window_handles[0])
-        # for i in range(len(races)):
-        for i in range(1):
+        for i in range(len(races)):
+        # for i in range(1):
             number = random.randint(0, max_race_number)
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
@@ -79,13 +79,13 @@ def choice_races(chrome):
             print(f'Race selected {race_name}')
             f.write(f"Race selected {race_name}, {datetime.datetime.now()}\n")
     except Exception as e:
-        f.write(f"Failed at choice_races, {e}, {datetime.datetime.now()}\n")
+        f.write(f"Failed at {race_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
 
 
 def choice_body_face(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[1].click()") # click body_face
         sleep(2)
         categories = chrome.find_elements_by_css_selector(".carousel-face .scroll .option")
@@ -109,15 +109,15 @@ def choice_body_face(chrome):
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 f.write(f"Body&face selected {option_name}, {datetime.datetime.now()}\n")
     except Exception as e:
-        f.write(f"Failed at choice_body&face, {e}, {datetime.datetime.now()}\n")
+        f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("Failed at choice_body&face")
+        print (f"Failed at {option_name}")
 
 
 def choice_clothing(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[2].click()")
         sleep(2)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
@@ -151,7 +151,7 @@ def choice_clothing(chrome):
 
 def items(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
         sleep(2)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
@@ -181,21 +181,21 @@ def items(chrome):
         print ("Failed at choice_items")
 
 
-def poseandbase(chrome):
+def Pose_and_base(chrome):
     try:
-        f = open(log_file, "a")
+        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[4].click()")
         sleep(2)
         categories = chrome.find_elements_by_css_selector(".carousel-poseAndBase .scroll .option")
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
-            print(f'start for poseandbase {category_name}')
+            print(f'start for Pose_and_base {category_name}')
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
-            sleep(3)  # click rand
+            sleep(3)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
-            f.write(f"posebase selected {category_name}, {datetime.datetime.now()}\n")
+            f.write(f"Pose_and_base selected {category_name}, {datetime.datetime.now()}\n")
             for j in range(len(category_options)):
                 option_name = category_options[j].find_element_by_css_selector("img").get_attribute('alt')
                 print(f'start for option {option_name}')
@@ -205,24 +205,24 @@ def poseandbase(chrome):
                 sleep(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
-                f.write(f"Poseandbase selected {option_name}, {datetime.datetime.now()}\n")
+                f.write(f"Pose_and_base selected {option_name}, {datetime.datetime.now()}\n")
     except Exception as e:
-        f.write(f"Failed at choice_poseandbase, {e}, {datetime.datetime.now()}\n")
+        f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("Failed at choice_poseandbase")
+        print (f"Failed at {option_name}")
 
 
 def main():
 
-    chrome = bra()
-    exit(chrome)
+    chrome = browser()
+    open_site(chrome)
     sed_click(chrome)
     choice_races(chrome)
     choice_body_face(chrome)
     choice_clothing(chrome)
     items(chrome)
-    poseandbase(chrome)
+    Pose_and_base(chrome)
 
 
 if __name__ == '__main__': 

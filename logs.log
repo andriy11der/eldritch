@@ -1,0 +1,15 @@
+start, 2020-04-10 20:10:32.885292
+0875
+successful open site, 2020-04-10 20:10:38.784248
+Count of races 40, 2020-04-10 20:11:07.774550
+Race selected halfElf right, 2020-04-10 20:11:23.821502
+Race selected Nathling left, 2020-04-10 20:11:41.740712
+Race selected halfOrc right, 2020-04-10 20:11:57.260616
+Race selected Goblin right, 2020-04-10 20:12:12.944632
+Race selected halfling left, 2020-04-10 20:12:28.456728
+Race selected dwarf right, 2020-04-10 20:12:43.755235
+Race selected Fir Bholg left, 2020-04-10 20:12:58.588827
+Failed at Fir Bholg left, Message: unknown error: cannot determine loading status
+from unknown error: unhandled inspector error: {"code":-32000,"message":"Inspected target navigated or closed"}
+  (Session info: chrome=80.0.3987.163)
+, 2020-04-10 20:15:42.298816
