@@ -112,7 +112,7 @@ def choice_body_face(chrome):
         f.write(f"Failed at choice_body&face, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("bed body&face")
+        print ("Failed at choice_body&face")
 
 
 def choice_clothing(chrome):
@@ -141,12 +141,12 @@ def choice_clothing(chrome):
                 sleep(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
-                f.write(f"Clothing selected {category_name}, {datetime.datetime.now()}\n")
+                f.write(f"Clothing selected {option_name}, {datetime.datetime.now()}\n")
     except Exception as e:
         f.write(f"Failed at choice_clothing, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("bed clothing")
+        print ("Failed at choice_clothing")
 
 
 def items(chrome):
@@ -173,12 +173,12 @@ def items(chrome):
                 sleep(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
-                f.write(f"Item selected {category_name}, {datetime.datetime.now()}\n")
+                f.write(f"Item selected {option_name}, {datetime.datetime.now()}\n")
     except Exception as e:
         f.write(f"Failed at choice_items, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("bed item")
+        print ("Failed at choice_items")
 
 
 def poseandbase(chrome):
@@ -205,12 +205,12 @@ def poseandbase(chrome):
                 sleep(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
-                f.write(f"Poseandbase selected {category_name}, {datetime.datetime.now()}\n")
+                f.write(f"Poseandbase selected {option_name}, {datetime.datetime.now()}\n")
     except Exception as e:
         f.write(f"Failed at choice_poseandbase, {e}, {datetime.datetime.now()}\n")
         print(e)
         sleep (5)
-        print ("bed poseandbase")
+        print ("Failed at choice_poseandbase")
 
 
 def main():
