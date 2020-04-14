@@ -46,8 +46,8 @@ def open_site(chrome):
         chrome.execute_script("document.querySelector('.mui-btn').click()")
         chrome.implicitly_wait(10)
         print('good click')
-        sleep(25)
-        print('good wait')
+        sleep(20)
+        print('site is opened')
     except Exception as e:
         print(e)
 
@@ -58,13 +58,10 @@ def sed_click(chrome):
 
 def turn_around(chrome):
     try:
-        f = open(logs_file, "a")
-        for x in range(500):
+        for x in range(250):
             turn = ActionChains(chrome)
             turn.send_keys(Keys.LEFT)
             turn.perform()
-        print("turned around")
-        f.write(f"turned around, {datetime.datetime.now()}\n")
     except Exception as e:
         f.write(f"Failed at turn around, {e}, {datetime.datetime.now()}\n")
         print(e)
@@ -78,7 +75,7 @@ def choice_races(chrome):
         max_race_number = 28
         chrome.switch_to.window(chrome.window_handles[0])
         # for i in range(len(races)):
-        for i in range(10):
+        for i in range(1):
             number = random.randint(0, max_race_number)
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
@@ -98,7 +95,7 @@ def choice_body_face(chrome):
     try:
         f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[1].click()") # click body_face
-        sleep(2)
+        sleep(1)
         categories = chrome.find_elements_by_css_selector(".carousel-face .scroll .option")
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
@@ -106,7 +103,7 @@ def choice_body_face(chrome):
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
-            sleep(2)
+            sleep(1)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             f.write(f"Body&face selected {category_name}, {datetime.datetime.now()}\n")
             for j in range(len(category_options)):
@@ -131,7 +128,7 @@ def choice_clothing(chrome):
     try:
         f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[2].click()")
-        sleep(2)
+        sleep(1)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
         print(categories)
 
@@ -141,7 +138,7 @@ def choice_clothing(chrome):
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
-            sleep(2)  # click rand
+            sleep(1)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             f.write(f"Clothing selected {category_name}, {datetime.datetime.now()}\n")
             for j in range(len(category_options)):
@@ -166,7 +163,7 @@ def items(chrome):
     try:
         f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
-        sleep(2)
+        sleep(1)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
@@ -174,7 +171,7 @@ def items(chrome):
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
-            sleep(2)  # click rand
+            sleep(1)  # click rand
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             f.write(f"Item selected {category_name}, {datetime.datetime.now()}\n")
             for j in range(len(category_options)):
@@ -199,7 +196,7 @@ def Pose_and_base(chrome):
     try:
         f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[4].click()")
-        sleep(2)
+        sleep(1)
         categories = chrome.find_elements_by_css_selector(".carousel-poseAndBase .scroll .option")
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
@@ -207,7 +204,7 @@ def Pose_and_base(chrome):
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
-            sleep(2)
+            sleep(1)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             f.write(f"Pose_and_base selected {category_name}, {datetime.datetime.now()}\n")
             for j in range(len(category_options)):
@@ -235,9 +232,9 @@ def main():
     turn_around(chrome)
     choice_races(chrome)
     choice_body_face(chrome)
-    # choice_clothing(chrome)
-    # items(chrome)
-    # Pose_and_base(chrome)
+    choice_clothing(chrome)
+    items(chrome)
+    Pose_and_base(chrome)
 
 
 if __name__ == '__main__': 
