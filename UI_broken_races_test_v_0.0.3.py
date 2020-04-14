@@ -75,10 +75,10 @@ def choice_races(chrome):
         f = open(logs_file, "a")
         races = chrome.find_elements_by_css_selector(".carousel-races .scroll .option")
         f.write(f"Count of races {len(races)}, {datetime.datetime.now()}\n")
-        max_race_number = 30
+        max_race_number = 28
         chrome.switch_to.window(chrome.window_handles[0])
         # for i in range(len(races)):
-        for i in range(1):
+        for i in range(10):
             number = random.randint(0, max_race_number)
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
