@@ -87,6 +87,7 @@ def choice_races(chrome):
             wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
             race_name = races[number].find_element_by_css_selector("img").get_attribute('alt')
             print(f'Race selected {race_name}')
+            turn_around(chrome)
             f.write(f"Race selected {race_name}, {datetime.datetime.now()}\n")
     except Exception as e:
         f.write(f"Failed at {race_name}, {e}, {datetime.datetime.now()}\n")
@@ -118,6 +119,7 @@ def choice_body_face(chrome):
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 f.write(f"Body&face selected {option_name}, {datetime.datetime.now()}\n")
+                turn_around(chrome)
     except Exception as e:
         f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
@@ -152,6 +154,7 @@ def choice_clothing(chrome):
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 f.write(f"Clothing selected {option_name}, {datetime.datetime.now()}\n")
+                turn_around(chrome)
     except Exception as e:
         f.write(f"Failed at choice_clothing, {e}, {datetime.datetime.now()}\n")
         print(e)
@@ -184,6 +187,7 @@ def items(chrome):
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 f.write(f"Item selected {option_name}, {datetime.datetime.now()}\n")
+                turn_around(chrome)
     except Exception as e:
         f.write(f"Failed at choice_items, {e}, {datetime.datetime.now()}\n")
         print(e)
@@ -216,6 +220,7 @@ def Pose_and_base(chrome):
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 f.write(f"Pose_and_base selected {option_name}, {datetime.datetime.now()}\n")
+                turn_around(chrome)
     except Exception as e:
         f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
