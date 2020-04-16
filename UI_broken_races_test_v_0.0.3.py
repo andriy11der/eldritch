@@ -42,7 +42,7 @@ def open_site(chrome):
         input_element.send_keys('ef2019')
         chrome.implicitly_wait(10)
         input_element.send_keys(Keys.ENTER)
-        print('good pass')
+        print('good password')
         chrome.execute_script("document.querySelector('.mui-btn').click()")
         chrome.implicitly_wait(10)
         print('good click')
