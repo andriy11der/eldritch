@@ -89,6 +89,7 @@ def choice_races(chrome):
     except Exception as e:
         f.write(f"Failed at {race_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
+        print(f"Failed at {race_name}")
 
 
 def choice_body_face(chrome):
