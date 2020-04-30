@@ -33,9 +33,10 @@ def browser():
 def open_site(chrome):
     try:
         f = open(logs_file, "a")
-        f.write(f"start login, {datetime.datetime.now()}\n")
         chrome.switch_to.window(chrome.window_handles[0])
-        chrome.get('https://stage.eldritch-foundry.com/')
+        # chrome.get('https://eldritch-foundry.com/')
+        # chrome.get('https://stage.eldritch-foundry.com/')
+        chrome.get('https://dev.eldritch-foundry.com/')
         chrome.implicitly_wait(10)
         f.write(f"successful open site, {datetime.datetime.now()}\n")
         input_element = chrome.find_element_by_name("password")
@@ -72,19 +73,21 @@ def choice_races(chrome):
         f = open(logs_file, "a")
         races = chrome.find_elements_by_css_selector(".carousel-races .scroll .option")
         f.write(f"Count of races {len(races)}, {datetime.datetime.now()}\n")
-        chrome.implicitly_wait(10)
+        chrome.implicitly_wait(20)
+        sleep(5)
         chrome.switch_to.window(chrome.window_handles[0])
-        # for i in range(0, len(races)):
-        for i in range(2):
+        for i in range(0, len(races)):
+        # for i in range(2):
             number = random.randint(0, len(races))
-            # chrome.execute_script(
-            #     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
-            #     races[i])
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
-                races[number])
+                races[i])
+            # chrome.execute_script(
+            #     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
+            #     races[number])
             chrome.implicitly_wait(10)
-            race_name = races[number].find_element_by_css_selector("img").get_attribute('alt')
+            race_name = races[i].find_element_by_css_selector("img").get_attribute('alt')
+            # race_name = races[number].find_element_by_css_selector("img").get_attribute('alt')
             print(f'Race selected {race_name}')
             f.write(f"Race selected {race_name}, {datetime.datetime.now()}\n")
             wait = WebDriverWait(chrome, 120)
@@ -105,7 +108,7 @@ def choice_body_face(chrome):
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
             print(f'start for category {category_name}')
-            f.write(f"Body&face selected {category_name}, {datetime.datetime.now()}\n")
+            f.write(f"\nBody&face selected {category_name}, {datetime.datetime.now()}\n")
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
@@ -114,11 +117,11 @@ def choice_body_face(chrome):
             for j in range(len(category_options)):
                 option_name = category_options[j].find_element_by_css_selector("img").get_attribute('alt')
                 print(f'start for option {option_name}')
-                f.write(f"Body&face selected {option_name}, {datetime.datetime.now()}\n")
+                f.write(f"      Body&face selected {option_name}, {datetime.datetime.now()}\n")
                 chrome.execute_script(
                     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                     category_options[j])
-                chrome.implicitly_wait(3)
+                chrome.implicitly_wait(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 turn_around(chrome)
@@ -141,7 +144,7 @@ def choice_clothing(chrome):
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
             print(f'start for clothing {category_name}')
-            f.write(f"Clothing selected {category_name}, {datetime.datetime.now()}\n")
+            f.write(f"\nClothing selected {category_name}, {datetime.datetime.now()}\n")
             chrome.implicitly_wait(4)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             for j in range(len(category_options)):
@@ -150,8 +153,8 @@ def choice_clothing(chrome):
                     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                     category_options[j])
                 print(f'start for option {option_name}')
-                f.write(f"Clothing selected {option_name}, {datetime.datetime.now()}\n")
-                chrome.implicitly_wait(3)
+                f.write(f"      Clothing selected {option_name}, {datetime.datetime.now()}\n")
+                chrome.implicitly_wait(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 turn_around(chrome)
@@ -161,11 +164,13 @@ def choice_clothing(chrome):
         print (f"Failed at {option_name}")
 
 
-def items(chrome):
+def items_weapon(chrome):
     try:
         f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
-        chrome.implicitly_wait(6)
+        print(f'start for items_weapon')
+        f.write(f"Item selected, {datetime.datetime.now()}\n")
+        chrome.implicitly_wait(10)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
         for i in range(len(categories)):
             category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
@@ -173,7 +178,53 @@ def items(chrome):
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
             print(f'start for item {category_name}')
-            f.write(f"Item selected {category_name}, {datetime.datetime.now()}\n")
+            f.write(f"\nItem selected {category_name}, {datetime.datetime.now()}\n")
+            chrome.implicitly_wait(4)
+            category_options = chrome.find_elements_by_css_selector(".carousel-weapon .option")
+            for j in range(len(category_options)):
+                option_name = category_options[j].find_element_by_css_selector("img").get_attribute('alt')
+                chrome.execute_script(
+                    "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
+                    category_options[j])
+                print(f'start for option {option_name}')
+                f.write(f"      Item selected {option_name}, {datetime.datetime.now()}\n")
+                chrome.implicitly_wait(3)
+                wait = WebDriverWait(chrome, 120)
+                wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
+                turn_around(chrome)
+                item_options = chrome.find_elements_by_css_selector('.type-selection.type-left-right .option')
+                for x in range(len(item_options)):
+                    option_name = item_options[x].find_element_by_css_selector("img").get_attribute('alt')
+                    chrome.execute_script(
+                        "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
+                        item_options[x])
+                    print(f'start for option {option_name}')
+                    f.write(f"              Item selected {option_name}, {datetime.datetime.now()}\n")
+                    chrome.implicitly_wait(1)
+                    wait = WebDriverWait(chrome, 120)
+                    wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
+                    turn_around(chrome)
+    except Exception as e:
+        f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
+        print(e)
+        print (f"Failed at {option_name}")
+
+
+def items_other(chrome):
+    try:
+        f = open(logs_file, "a")
+        chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
+        print(f'start for item_other')
+        f.write(f"Item_other selected, {datetime.datetime.now()}\n")
+        chrome.implicitly_wait(10)
+        categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
+        for i in range(len(categories)):
+            category_name = categories[i].find_element_by_css_selector("img").get_attribute('alt')
+            chrome.execute_script(
+                "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
+                categories[i])
+            print(f'start for item {category_name}')
+            f.write(f"\nItem selected {category_name}, {datetime.datetime.now()}\n")
             chrome.implicitly_wait(4)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             for j in range(len(category_options)):
@@ -182,8 +233,8 @@ def items(chrome):
                     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                     category_options[j])
                 print(f'start for option {option_name}')
-                f.write(f"Item selected {option_name}, {datetime.datetime.now()}\n")
-                chrome.implicitly_wait(3)
+                f.write(f"      Item selected {option_name}, {datetime.datetime.now()}\n")
+                chrome.implicitly_wait(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 turn_around(chrome)
@@ -191,7 +242,6 @@ def items(chrome):
         f.write(f"Failed at {option_name}, {e}, {datetime.datetime.now()}\n")
         print(e)
         print (f"Failed at {option_name}")
-
 
 def Pose_and_base(chrome):
     try:
@@ -205,7 +255,7 @@ def Pose_and_base(chrome):
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 categories[i])
             print(f'start for Pose_and_base {category_name}')
-            f.write(f"Pose_and_base selected {category_name}, {datetime.datetime.now()}\n")
+            f.write(f"\nPose_and_base selected {category_name}, {datetime.datetime.now()}\n")
             chrome.implicitly_wait(4)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             for j in range(len(category_options)):
@@ -214,8 +264,8 @@ def Pose_and_base(chrome):
                     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                     category_options[j])
                 print(f'start for option {option_name}')
-                f.write(f"Pose_and_base selected {option_name}, {datetime.datetime.now()}\n")
-                chrome.implicitly_wait(3)
+                f.write(f"      Pose_and_base selected {option_name}, {datetime.datetime.now()}\n")
+                chrome.implicitly_wait(2)
                 wait = WebDriverWait(chrome, 120)
                 wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
                 turn_around(chrome)
@@ -230,10 +280,11 @@ def main():
     open_site(chrome)
     sed_click(chrome)
     turn_around(chrome)
-    choice_races(chrome)
+    # choice_races(chrome)
     choice_body_face(chrome)
     choice_clothing(chrome)
-    items(chrome)
+    items_weapon(chrome)
+    items_other(chrome)
     Pose_and_base(chrome)
 
 
