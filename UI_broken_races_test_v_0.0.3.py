@@ -225,7 +225,7 @@ def items_other(chrome):
                 categories[i])
             print(f'start for item {category_name}')
             f.write(f"\nItem selected {category_name}, {datetime.datetime.now()}\n")
-            chrome.implicitly_wait(4)
+            chrome.implicitly_wait(5)
             category_options = chrome.find_elements_by_css_selector(".type-selection .scroll .option")
             for j in range(len(category_options)):
                 option_name = category_options[j].find_element_by_css_selector("img").get_attribute('alt')
