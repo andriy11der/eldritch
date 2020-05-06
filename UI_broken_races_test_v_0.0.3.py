@@ -16,6 +16,9 @@ from selenium.webdriver.common.by import By
 logs_file = 'logs.log'
 f = open(logs_file, "w")
 f.write(f"start, {datetime.datetime.now()}\n")
+f.close()
+f = open(logs_file, "a")
+
 
 def browser():
     try:
@@ -32,7 +35,6 @@ def browser():
 
 def open_site(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.switch_to.window(chrome.window_handles[0])
         # chrome.get('https://eldritch-foundry.com/')
         # chrome.get('https://stage.eldritch-foundry.com/')
@@ -86,7 +88,6 @@ def turn_around(chrome):
 
 def choice_races(chrome):
     try:
-        f = open(logs_file, "a")
         races = chrome.find_elements_by_css_selector(".carousel-races .scroll .option")
         f.write(f"Count of races {len(races)}, {datetime.datetime.now()}\n")
         chrome.implicitly_wait(20)
@@ -118,7 +119,6 @@ def choice_races(chrome):
 
 def choice_body_face(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[1].click()") # click body_face
         chrome.implicitly_wait(6)
         categories = chrome.find_elements_by_css_selector(".carousel-face .scroll .option")
@@ -150,7 +150,6 @@ def choice_body_face(chrome):
 
 def choice_clothing(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[2].click()")
         chrome.implicitly_wait(6)
         categories = chrome.find_elements_by_css_selector(".selectors .selector:nth-child(1) .option")
@@ -183,7 +182,6 @@ def choice_clothing(chrome):
 
 def items_weapon(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
         print(f'start for items_weapon')
         f.write(f"Item selected, {datetime.datetime.now()}\n")
@@ -229,7 +227,6 @@ def items_weapon(chrome):
 
 def items_other(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
         print(f'start for item_other')
         f.write(f"Item_other selected, {datetime.datetime.now()}\n")
@@ -260,9 +257,9 @@ def items_other(chrome):
         print(e)
         print (f"Failed at {option_name}")
 
+
 def Pose_and_base(chrome):
     try:
-        f = open(logs_file, "a")
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[4].click()")
         chrome.implicitly_wait(6)
         categories = chrome.find_elements_by_css_selector(".carousel-poseAndBase .scroll .option")

@@ -1,8 +1,7 @@
-start, 2020-05-06 18:35:26.412470
+start, 2020-05-06 19:06:55.908331
+successful open site, 2020-05-06 19:07:01.836707
+Count of races 26, 2020-05-06 19:07:16.233964
+Race selected Orc right, 2020-05-06 19:07:21.350230
 error pop-up Exists.pop-up text Could not find item
-.592729
-Race selected Orc right, 2020-05-06 18:35:50.775617
-Race selected test abisfadone left, 2020-05-06 18:36:00.744974
-Race selected test abisfadone right, 2020-05-06 18:36:14.863323
-Race selected Half-Orc left, 2020-05-06 18:36:28.630902
-Failed at Half-Orc left, 'NoneType' object has no attribute 'is_displayed', 2020-05-06 18:36:32.352410
+Race selected test abisfadone left, 2020-05-06 19:07:32.081071
+Failed at test abisfadone left, 'NoneType' object has no attribute 'is_displayed', 2020-05-06 19:07:36.199007
