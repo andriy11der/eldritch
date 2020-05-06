@@ -61,13 +61,13 @@ def sed_click(chrome):
 
 def error(chrome):
     try:
-        chrome.implicitly_wait(5)
+        chrome.implicitly_wait(3)
         error = chrome.find_element_by_css_selector(".dialog.dialog_small.dialog_error")
         if error is not None:
             type_error = error.find_element_by_css_selector(".dialog__content-body").text
-            print(f'{type_error}')
-            f.write(f'\nerror {type_error}\n\n')
-            chrome.implicitly_wait(5)
+            print(f'ERROR {type_error}')
+            f.write(f'\nERROR {type_error}\n\n')
+            chrome.implicitly_wait(2)
             error.find_element_by_css_selector(".close-btn").click()
             chrome.implicitly_wait(2)
     except:
@@ -101,7 +101,7 @@ def choice_races(chrome):
             # chrome.execute_script(
             #     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
             #     races[number])
-            chrome.implicitly_wait(7)
+            chrome.implicitly_wait(6)
             race_name = races[i].find_element_by_css_selector("img").get_attribute('alt')
             # race_name = races[number].find_element_by_css_selector("img").get_attribute('alt')
             print(f'Race selected {race_name}')

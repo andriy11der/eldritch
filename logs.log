@@ -1,17 +1,139 @@
-start, 2020-05-06 19:11:57.906119
-successful open site, 2020-05-06 19:12:00.924103
-Count of races 26, 2020-05-06 19:12:14.772029
-Race selected Orc right, 2020-05-06 19:12:19.888096
+start, 2020-05-06 19:43:47.625486
+successful open site, 2020-05-06 19:43:50.622980
+Count of races 26, 2020-05-06 19:44:03.355314
+Race selected dwarf left, 2020-05-06 19:44:08.419818
+Race selected dwarf right, 2020-05-06 19:44:20.906954
+Race selected halfling left, 2020-05-06 19:44:30.666236
+Race selected halfling right, 2020-05-06 19:44:41.992940
+Race selected human left, 2020-05-06 19:44:52.766709
+Race selected human right, 2020-05-06 19:45:03.675171
+Race selected elf left, 2020-05-06 19:45:12.963422
+Race selected elf right, 2020-05-06 19:45:25.427162
+Race selected halfElf left, 2020-05-06 19:45:36.234343
+Race selected halfElf right, 2020-05-06 19:45:48.704543
+Race selected Fir Bholg left, 2020-05-06 19:45:59.542995
+Race selected Fir Bholg right, 2020-05-06 19:46:11.937193
+Race selected Goblin left, 2020-05-06 19:46:22.840290
+Race selected Goblin right, 2020-05-06 19:46:35.260616
+Race selected Goliath left, 2020-05-06 19:46:46.007629
+Race selected Goliath right, 2020-05-06 19:46:58.238402
+Race selected Tiefling left, 2020-05-06 19:47:09.037645
+Race selected Tiefling right, 2020-05-06 19:47:22.392962
+Race selected SingleGender left, 2020-05-06 19:47:33.192915
+Race selected SingleGender right, 2020-05-06 19:47:45.551613
+Race selected Orc left, 2020-05-06 19:47:56.485242
+Race selected Orc right, 2020-05-06 19:48:08.873744
 
- error Could not find item
-Race selected test abisfadone left, 2020-05-06 19:12:29.815568
-Race selected test abisfadone right, 2020-05-06 19:12:44.002138
-Race selected Half-Orc left, 2020-05-06 19:12:57.296755
-Failed at turn around, Message: no such window: target window already closed
+error Could not find item
+
+Race selected test abisfadone left, 2020-05-06 19:48:16.204379
+Race selected test abisfadone right, 2020-05-06 19:48:27.838927
+Race selected Half-Orc left, 2020-05-06 19:48:37.620702
+Race selected Half-Orc right, 2020-05-06 19:48:49.086792
+
+Body&face selected bodyType none, 2020-05-06 19:48:59.068455
+
+Body&face selected Face none, 2020-05-06 19:49:03.280416
+
+Body&face selected horns none, 2020-05-06 19:49:07.435167
+      Body&face selected horns_001 none, 2020-05-06 19:49:07.534896
+      Body&face selected horns_002 none, 2020-05-06 19:49:10.173400
+      Body&face selected horns_003 none, 2020-05-06 19:49:12.898324
+
+Body&face selected hair none, 2020-05-06 19:49:15.589963
+      Body&face selected hair_001 none, 2020-05-06 19:49:15.683711
+      Body&face selected hair_002 none, 2020-05-06 19:49:18.341626
+      Body&face selected hair_003 none, 2020-05-06 19:49:20.995950
+      Body&face selected hair_004 none, 2020-05-06 19:49:23.628491
+      Body&face selected hair_005 none, 2020-05-06 19:49:26.306952
+      Body&face selected hair_006 none, 2020-05-06 19:49:28.952584
+      Body&face selected hair_007 none, 2020-05-06 19:49:31.583635
+      Body&face selected hair_014 none, 2020-05-06 19:49:34.246018
+      Body&face selected hair_008 none, 2020-05-06 19:49:36.907256
+      Body&face selected hair_011 none, 2020-05-06 19:49:39.575990
+      Body&face selected hair_010 none, 2020-05-06 19:49:42.190080
+      Body&face selected hair_012 none, 2020-05-06 19:49:44.856974
+      Body&face selected hair_013 none, 2020-05-06 19:49:47.570735
+      Body&face selected hair_009 none, 2020-05-06 19:49:50.463796
+      Body&face selected hair_015 none, 2020-05-06 19:49:53.540570
+      Body&face selected hair_016 none, 2020-05-06 19:49:56.611728
+      Body&face selected hair_018 none, 2020-05-06 19:49:59.274601
+      Body&face selected hair_021 none, 2020-05-06 19:50:02.131301
+      Body&face selected hair_019 none, 2020-05-06 19:50:04.732388
+      Body&face selected hair_020 none, 2020-05-06 19:50:07.473687
+      Body&face selected hair_017 none, 2020-05-06 19:50:10.221263
+
+Body&face selected eyebrows none, 2020-05-06 19:50:12.852047
+      Body&face selected eyebrows_001 none, 2020-05-06 19:50:12.917872
+      Body&face selected eyebrows_002 none, 2020-05-06 19:50:15.599088
+      Body&face selected eyebrows_003 none, 2020-05-06 19:50:18.267936
+
+Body&face selected glasses none, 2020-05-06 19:50:20.885820
+      Body&face selected glasses_002 none, 2020-05-06 19:50:20.948653
+      Body&face selected glasses_003 none, 2020-05-06 19:50:23.565835
+      Body&face selected glasses_004 none, 2020-05-06 19:50:26.207892
+      Body&face selected glasses_007 none, 2020-05-06 19:50:28.955614
+      Body&face selected glasses_005 none, 2020-05-06 19:50:31.686558
+      Body&face selected glasses_006 none, 2020-05-06 19:50:34.584923
+      Body&face selected glasses_008 none, 2020-05-06 19:50:37.232064
+
+Body&face selected beard none, 2020-05-06 19:50:39.872282
+      Body&face selected beard_001 none, 2020-05-06 19:50:39.952026
+      Body&face selected beard_002 none, 2020-05-06 19:50:42.593127
+      Body&face selected beard_003 none, 2020-05-06 19:50:45.216022
+      Body&face selected beard_004 none, 2020-05-06 19:50:47.874656
+      Body&face selected beard_006 none, 2020-05-06 19:50:50.493873
+      Body&face selected beard_005 none, 2020-05-06 19:50:53.233566
+
+Body&face selected tail none, 2020-05-06 19:50:55.937800
+      Body&face selected tail_001 none, 2020-05-06 19:50:55.995646
+      Body&face selected tail_002 none, 2020-05-06 19:50:58.635773
+
+Clothing selected headTop none, 2020-05-06 19:51:01.609139
+      Clothing selected headTop_002 none, 2020-05-06 19:51:01.657012
+      Clothing selected headTop_003 none, 2020-05-06 19:51:03.779821
+      Clothing selected headTop_001 none, 2020-05-06 19:51:05.891351
+      Clothing selected headTop_004 none, 2020-05-06 19:51:07.976196
+      Clothing selected headTop_005 none, 2020-05-06 19:51:10.086553
+      Clothing selected headTop_006 none, 2020-05-06 19:51:12.178968
+      Clothing selected headTop_007 none, 2020-05-06 19:51:14.855956
+
+Clothing selected pauldron none, 2020-05-06 19:51:16.983268
+      Clothing selected pauldron_001 none, 2020-05-06 19:51:17.042110
+      Clothing selected pauldron_002 none, 2020-05-06 19:51:19.660692
+      Clothing selected pauldron_003 none, 2020-05-06 19:51:22.329788
+      Clothing selected pauldron_004 none, 2020-05-06 19:51:24.980013
+      Clothing selected pauldron_005 none, 2020-05-06 19:51:27.639515
+      Clothing selected pauldron_006 none, 2020-05-06 19:51:30.271137
+      Clothing selected pauldron_007 none, 2020-05-06 19:51:32.960722
+
+Clothing selected torso none, 2020-05-06 19:51:35.575903
+      Clothing selected torso_001 none, 2020-05-06 19:51:35.641725
+      Clothing selected torso_002 none, 2020-05-06 19:51:38.286026
+      Clothing selected torso_003 none, 2020-05-06 19:51:40.916628
+      Clothing selected torso_004 none, 2020-05-06 19:51:43.627645
+      Clothing selected torso_005 none, 2020-05-06 19:51:46.259109
+      Clothing selected torso_006 none, 2020-05-06 19:51:48.905553
+      Clothing selected torso_007 none, 2020-05-06 19:51:51.759510
+      Clothing selected torso_013 none, 2020-05-06 19:51:54.643255
+      Clothing selected torso_012 none, 2020-05-06 19:51:57.286315
+      Clothing selected torso_009 none, 2020-05-06 19:51:59.981964
+      Clothing selected torso_011 none, 2020-05-06 19:52:03.242006
+      Clothing selected torso_010 none, 2020-05-06 19:52:05.963976
+      Clothing selected torso_014 none, 2020-05-06 19:52:08.767706
+
+Clothing selected gloves none, 2020-05-06 19:52:11.927537
+      Clothing selected gloves_001 none, 2020-05-06 19:52:11.991366
+      Clothing selected gloves_002 none, 2020-05-06 19:52:15.025621
+      Clothing selected gloves_003 none, 2020-05-06 19:52:17.795985
+      Clothing selected gloves_004 none, 2020-05-06 19:52:20.893305
+      Clothing selected gloves_005 none, 2020-05-06 19:52:23.517974
+      Clothing selected gloves_008 none, 2020-05-06 19:52:26.300629
+      Clothing selected gloves_009 none, 2020-05-06 19:52:28.907315
+      Clothing selected gloves_007 none, 2020-05-06 19:52:31.585898
+      Clothing selected gloves_006 none, 2020-05-06 19:52:34.381097
+      Clothing selected gloves_010 none, 2020-05-06 19:52:37.053689
+Failed at gloves_010 none, Message: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=79.0.3945.79)
-, 2020-05-06 19:13:10.389659
-Failed at Half-Orc left, Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=79.0.3945.79)
-, 2020-05-06 19:13:10.392651
+, 2020-05-06 19:52:40.120743
