@@ -47,7 +47,7 @@ def open_site(chrome):
         chrome.execute_script("document.querySelector('.mui-btn').click()")
         chrome.implicitly_wait(10)
         print('good click')
-        chrome.implicitly_wait(20)
+        sleep(10)
         print('site is opened')
     except Exception as e:
         print(e)
@@ -57,9 +57,25 @@ def sed_click(chrome):
             "window.triggerMouseEvent = function triggerMouseEvent (node, eventType) { var clickEvent = document.createEvent ('MouseEvents'); clickEvent.initEvent (eventType, true, true); node.dispatchEvent (clickEvent); }")
 
 
+def error(chrome):
+    try:
+        chrome.implicitly_wait(5)
+        error = chrome.find_element_by_css_selector(".dialog.dialog_small.dialog_error")
+        if error is not None:
+            type_error = error.find_element_by_css_selector(".dialog__content-body").text
+            print(f'{type_error}')
+            f.write(f'error pop-up Exists.pop-up text {type_error}\n')
+            chrome.implicitly_wait(5)
+            error.find_element_by_css_selector(".close-btn").click()
+            chrome.implicitly_wait(2)
+    except Exception as e:
+        print(e)
+
+
+
 def turn_around(chrome):
     try:
-        for x in range(500):
+        for x in range(1):
             turn = ActionChains(chrome)
             turn.send_keys(Keys.LEFT)
             turn.perform()
@@ -76,22 +92,23 @@ def choice_races(chrome):
         chrome.implicitly_wait(20)
         sleep(5)
         chrome.switch_to.window(chrome.window_handles[0])
-        for i in range(0, len(races)):
+        for i in range(21, 30):
         # for i in range(2):
-            number = random.randint(0, len(races))
+        #     number = random.randint(0, len(races))
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
                 races[i])
             # chrome.execute_script(
             #     "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
             #     races[number])
-            chrome.implicitly_wait(10)
+            chrome.implicitly_wait(7)
             race_name = races[i].find_element_by_css_selector("img").get_attribute('alt')
             # race_name = races[number].find_element_by_css_selector("img").get_attribute('alt')
             print(f'Race selected {race_name}')
             f.write(f"Race selected {race_name}, {datetime.datetime.now()}\n")
             wait = WebDriverWait(chrome, 120)
             wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, '.scene3d.loading')))
+            error(chrome)
             turn_around(chrome)
     except Exception as e:
         f.write(f"Failed at {race_name}, {e}, {datetime.datetime.now()}\n")
@@ -280,7 +297,7 @@ def main():
     open_site(chrome)
     sed_click(chrome)
     turn_around(chrome)
-    # choice_races(chrome)
+    choice_races(chrome)
     choice_body_face(chrome)
     choice_clothing(chrome)
     items_weapon(chrome)
