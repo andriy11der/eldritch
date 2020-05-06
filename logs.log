@@ -1,7 +1,17 @@
-start, 2020-05-06 19:06:55.908331
-successful open site, 2020-05-06 19:07:01.836707
-Count of races 26, 2020-05-06 19:07:16.233964
-Race selected Orc right, 2020-05-06 19:07:21.350230
-error pop-up Exists.pop-up text Could not find item
-Race selected test abisfadone left, 2020-05-06 19:07:32.081071
-Failed at test abisfadone left, 'NoneType' object has no attribute 'is_displayed', 2020-05-06 19:07:36.199007
+start, 2020-05-06 19:11:57.906119
+successful open site, 2020-05-06 19:12:00.924103
+Count of races 26, 2020-05-06 19:12:14.772029
+Race selected Orc right, 2020-05-06 19:12:19.888096
+
+ error Could not find item
+Race selected test abisfadone left, 2020-05-06 19:12:29.815568
+Race selected test abisfadone right, 2020-05-06 19:12:44.002138
+Race selected Half-Orc left, 2020-05-06 19:12:57.296755
+Failed at turn around, Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.79)
+, 2020-05-06 19:13:10.389659
+Failed at Half-Orc left, Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.79)
+, 2020-05-06 19:13:10.392651

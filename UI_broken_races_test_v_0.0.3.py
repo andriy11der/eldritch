@@ -66,13 +66,12 @@ def error(chrome):
         if error is not None:
             type_error = error.find_element_by_css_selector(".dialog__content-body").text
             print(f'{type_error}')
-            f.write(f'error pop-up Exists.pop-up text {type_error}\n')
+            f.write(f'\nerror {type_error}\n\n')
             chrome.implicitly_wait(5)
             error.find_element_by_css_selector(".close-btn").click()
             chrome.implicitly_wait(2)
-    except Exception as e:
-        print(e)
-
+    except:
+        pass
 
 
 def turn_around(chrome):
@@ -93,7 +92,7 @@ def choice_races(chrome):
         chrome.implicitly_wait(20)
         sleep(5)
         chrome.switch_to.window(chrome.window_handles[0])
-        for i in range(21, 30):
+        for i in range(0, len(races)):
         # for i in range(2):
         #     number = random.randint(0, len(races))
             chrome.execute_script(
