@@ -1,3 +1,21 @@
-start, 2020-04-10 19:45:58.090807
-5602
-successful open site, 2020-04-10 19:46:04.039425
+start login, 2020-05-05 17:16:43.378826
+successful open site, 2020-05-05 17:16:45.091365
+Count of races 40, 2020-05-05 17:17:14.115548
+Race selected elf right, 2020-05-05 17:17:27.854925
+Body&face selected bodyType none, 2020-05-05 17:17:43.328173
+Body&face selected Face none, 2020-05-05 17:17:56.483798
+Body&face selected horns none, 2020-05-05 17:17:59.598317
+Body&face selected horns_001 none, 2020-05-05 17:18:10.714252
+Failed at choice_body&face, 'NoneType' object has no attribute 'is_displayed', 2020-05-05 17:18:18.867379
+Failed at choice_clothing, Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.79)
+, 2020-05-05 17:18:23.876243
+Failed at choice_items, Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.79)
+, 2020-05-05 17:18:28.882016
+Failed at choice_poseandbase, Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=79.0.3945.79)
+, 2020-05-05 17:18:33.887647
