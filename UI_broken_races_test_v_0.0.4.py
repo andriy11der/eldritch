@@ -37,8 +37,8 @@ def open_site(chrome):
     try:
         chrome.switch_to.window(chrome.window_handles[0])
         # chrome.get('https://eldritch-foundry.com/')
-        # chrome.get('https://stage.eldritch-foundry.com/')
-        chrome.get('https://dev.eldritch-foundry.com/')
+        chrome.get('https://stage.eldritch-foundry.com/')
+        # chrome.get('https://dev.eldritch-foundry.com/')
         chrome.implicitly_wait(10)
         f.write(f"successful open site, {datetime.datetime.now()}\n")
         input_element = chrome.find_element_by_name("password")
@@ -92,7 +92,7 @@ def choice_races(chrome):
         chrome.implicitly_wait(20)
         sleep(5)
         chrome.switch_to.window(chrome.window_handles[0])
-        for i in range(0, len(races)):
+        for i in range(3, 4):
         # for i in range(2):
         #     number = random.randint(0, len(races))
             chrome.execute_script(
