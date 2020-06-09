@@ -1,3 +1,4 @@
+""""libraries"""
 import io
 import random
 import datetime
@@ -13,6 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
+"""create file for writing logs"""
 logs_file = 'logs.log'
 f = open(logs_file, "w")
 f.write(f"start, {datetime.datetime.now()}\n")
@@ -20,6 +22,7 @@ f.close()
 f = open(logs_file, "a")
 
 
+"""function with capabilities (properties window Chrome)"""
 def browser():
     try:
         chrome_options = webdriver.ChromeOptions()
@@ -33,6 +36,7 @@ def browser():
         print(e)
 
 
+"""function for opening site"""
 def open_site(chrome):
     try:
         chrome.switch_to.window(chrome.window_handles[0])
@@ -41,24 +45,29 @@ def open_site(chrome):
         # chrome.get('https://dev.eldritch-foundry.com/')
         chrome.implicitly_wait(10)
         f.write(f"successful open site, {datetime.datetime.now()}\n")
-        input_element = chrome.find_element_by_name("password")
-        input_element.send_keys('ef2019')
+        input_element = chrome.find_element_by_name("password") #find password field
+        input_element.send_keys('ef2019') #type password
         chrome.implicitly_wait(10)
-        input_element.send_keys(Keys.ENTER)
+        input_element.send_keys(Keys.ENTER) #click submit
         print('good password')
-        chrome.execute_script("document.querySelector('.mui-btn').click()")
+        chrome.execute_script("document.querySelector('.mui-btn').click()") #click button got it
         chrome.implicitly_wait(10)
         print('good click')
         sleep(10)
         print('site is opened')
+        cookies = chrome.find_element_by_css_selector(".termly-style-button-03399e.undefined.termly-style-consent-banner-bd066f") #click continue in cookies menu
+        cookies.click()
     except Exception as e:
         print(e)
 
+
+"""function for clicking of mouse"""
 def sed_click(chrome):
     chrome.execute_script(
             "window.triggerMouseEvent = function triggerMouseEvent (node, eventType) { var clickEvent = document.createEvent ('MouseEvents'); clickEvent.initEvent (eventType, true, true); node.dispatchEvent (clickEvent); }")
 
 
+"""function for reveal errors that occurs on site"""
 def error(chrome):
     try:
         chrome.implicitly_wait(3)
@@ -74,6 +83,7 @@ def error(chrome):
         pass
 
 
+""""function for turn around character"""
 def turn_around(chrome):
     try:
         for x in range(1):
@@ -85,6 +95,7 @@ def turn_around(chrome):
         print(e)
 
 
+"""function for choice races"""
 def choice_races(chrome):
     try:
         races = chrome.find_elements_by_css_selector(".carousel-races .scroll .option")
@@ -92,8 +103,8 @@ def choice_races(chrome):
         chrome.implicitly_wait(20)
         sleep(5)
         chrome.switch_to.window(chrome.window_handles[0])
-        for i in range(3, 4):
-        # for i in range(2):
+        for i in range(4, 7):
+        # for i in range(len(races)):
         #     number = random.randint(0, len(races))
             chrome.execute_script(
                 "triggerMouseEvent (arguments[0], 'mousedown'); triggerMouseEvent (arguments[0], 'mouseup')",
@@ -116,6 +127,7 @@ def choice_races(chrome):
         print(f"Failed at {race_name}")
 
 
+"""function for choice all icons in Body and face"""
 def choice_body_face(chrome):
     try:
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[1].click()") # click body_face
@@ -147,6 +159,7 @@ def choice_body_face(chrome):
         print (f"Failed at {option_name}")
 
 
+"""function for choice all icons in clothing"""
 def choice_clothing(chrome):
     try:
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[2].click()")
@@ -179,6 +192,7 @@ def choice_clothing(chrome):
         print (f"Failed at {option_name}")
 
 
+"""function for choice all icons in weapon"""
 def items_weapon(chrome):
     try:
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
@@ -224,6 +238,7 @@ def items_weapon(chrome):
         print (f"Failed at {option_name}")
 
 
+"""function for choice all icons in magic focus, tools, back item and side items"""
 def items_other(chrome):
     try:
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[3].click()")
@@ -257,6 +272,7 @@ def items_other(chrome):
         print (f"Failed at {option_name}")
 
 
+"""function for choice all icons in pose and base"""
 def Pose_and_base(chrome):
     try:
         chrome.execute_script("document.querySelectorAll('.stage-select-btn')[4].click()")
@@ -287,7 +303,7 @@ def Pose_and_base(chrome):
         print(e)
         print (f"Failed at {option_name}")
 
-
+"""the main function that calls all the necessary functions"""
 def main():
     chrome = browser()
     open_site(chrome)

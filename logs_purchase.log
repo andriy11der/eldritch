@@ -1,3 +1,5 @@
-start, 2020-06-06 13:40:15.959735
-successful open site, 2020-06-06 13:40:18.710603
-{e}, {datetime.datetime.now()}
+start, 2020-06-09 11:00:14.092349
+successful open site, 2020-06-09 11:00:20.113385
+site is opened, 2020-06-09 11:00:35.877067
+user logged in, 2020-06-09 11:00:42.990794
+failed at purchase, {datetime.datetime.now()}
